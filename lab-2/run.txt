@@ -1,0 +1,26 @@
+Profile.clear()
+
+@profile runner()
+
+Profile.print()
+
+Profile.print(format=:flat)
+
+using ProfileView
+ProfileView.view()
+
+Profile.clear()
+
+Profile.init(delay=0.01)
+
+@profile runner()
+
+using ProfileView
+ProfileView.view()
+
+@allocated runner()
+
+@time runner()
+
+using BechmarkTools
+@benchmark runner()
